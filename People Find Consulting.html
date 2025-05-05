@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>People Find Consulting</title>
+</head>
+
+<body>
+
+  <div class="overlay">
+  <img src="img/fondo.jpg" class="fondo" alt="fondo"></div>
+
+  <header>
+    <div class="logotipo">
+      <a href="People Find Consulting.html">
+        <img src="img/LOGO - People Find Consulting.png" alt="logo">
+      </a>  
+    </div>
+
+    <nav class="menu-reg">
+      <ul class="menu">
+        <li><a href="People Find Consulting.html">Sobre nosotros</a></li>
+        <li><a href="perfil.html">Servicios</a></li>
+        <li><a href="servicios.html">Novedades</a></li>
+      </ul>
+
+      <a href="Contacto.html">
+        <button class="contactanos">Contactanos</button>
+      </a>
+
+    </nav>
+  </header>
+
+  <nav class="carrusel">
+    <div class="carousel">
+      <button class="carousel-button prev">&#10094;</button>
+      <div class="carousel-track-container">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <a href="Capacitacion.html"><img src="img/Capacitaciones.jpg" alt="Slide 1"></a>
+          </div>
+          <div class="carousel-slide">
+            <a href="Busquedas.html"><img src="img/Busqueda.jpg" alt="Slide 2"></a>
+          </div>
+          <div class="carousel-slide">
+            <a href="Gestion.html"><img src="img/Gestion.jpg" alt="Slide 3"></a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-button next">&#10095;</button>
+    </div>
+  </nav>
+
+  <section class="texto">
+    <ul>
+      <li><strong>Búsquedas y selección:</strong> Somos prácticos para encontrar los mejores candidatos de forma rápida
+        y eficiente. con
+        tamos con las herramientas y capacidades para brindar soluciones a tu medida.
+      </li>
+      <br>
+      <br>
+      <br>
+      <li><strong>Capacitación y desarrollo:</strong> Nos especializamos en brindar capacitaciones y talleres con varios
+        enfoques en las
+        habilidades blandas. También diseñamos actividades para contribuir al bienestar organizacional, contribuyendo a
+        mejorar los vínculos entre empleados y sectores de la organización.</li>
+        <br>
+        <br>
+        <br>
+      <li><strong>Gestión de RRHH:</strong> Acompañamos a crear y mejorar procesos, políticas e implementación de
+        herramientas que
+        contribuyan a una mejor gestión de RRHH y de la organización.</li>
+        <br>
+    </ul>
+
+    <h2 >Sobre nosotros</h2>
+    <p>People Find es una consultora integral de recursos humanos con una profunda vocación de servicios y una marcada
+      orientación al cliente. Somos un equipo de profesionales que nos especializamos en reclutamiento y selección,
+      capacitación y desarrollo, gestión de recursos humanos. Nos concentramos en brindar soluciones a nuestros clientes
+      apoyándonos en nuestra experiencia profesional, poniendo el foco en acompañar de manera efectiva y resolutiva
+      siendo empáticos y poniendo al servicio nuestra metodología de trabajo, para el logro de los objetivos.</p>
+  </section>
+
+  <footer>
+    <section class="pie">
+      <nav>
+        <div class="col1">
+          <a href="People Find Consulting.html">
+            <img src="img/LOGO - People Find Consulting.png" alt="logo">
+          </a>
+        </div>
+
+        <div class="col2">
+          <ul>
+            <li><a href="People Find Consulting.html">Inicio</a></li>
+            
+            <li><a href="Busquedas.html">Búsquedas y selección</a></li>
+            
+            <li><a href="Capacitacion.html">Capacitacion y desarrollo</a></li>
+            
+            <li><a href="Gestion.html">Gestión de RRHH</a></li>
+          </ul>
+        </div>
+
+        <div class="col3">
+
+          <a href="https://www.instagram.com/peoplefindconsulting?igsh=MWZzYXV4b2t4YjBxbQ==">
+            <img src="img/instagram.png" alt="logo">
+          </a>
+
+          <a href="https://www.linkedin.com/company/pf-consultoresrrhh/">
+            <img src="img/linkedin.png" alt="logo">
+          </a>
+
+        </div>
+
+      </nav>
+    </section>
+  </footer>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-button.next');
+    const prevButton = document.querySelector('.carousel-button.prev');
+  
+    let currentIndex = 0;
+  
+    const moveToSlide = (index) => {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+  
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      moveToSlide(currentIndex);
+    });
+  
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      moveToSlide(currentIndex);
+    });
+  
+    // Auto-play (opcional)
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      moveToSlide(currentIndex);
+    }, 7000);
+  </script>
+
+</body>
+
+</html>

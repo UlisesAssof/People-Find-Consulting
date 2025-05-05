@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>People Find Consulting</title>
+</head>
+
+<body class="contacto-page">
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evitar que el formulario se envíe de manera tradicional
+
+  // Validar que el correo electrónico tenga un formato válido
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  if (message.length < 20) {
+    alert('El mensaje debe tener al menos 20 caracteres.');
+    return;
+  }
+
+  // Si todo está correcto, mostrar el mensaje de confirmación
+  document.getElementById('confirmation-message').style.display = 'block';
+
+  // Aquí podrías integrar un servicio como EmailJS o enviar el correo con un backend
+  // Ejemplo con EmailJS:
+  // emailjs.sendForm('your_service_id', 'your_template_id', this)
+  //   .then(function(response) {
+  //     console.log('Mensaje enviado', response);
+  //   }, function(error) {
+  //     console.log('Error al enviar', error);
+  //   });
+});
+  </script>
+
+
+  <div class="overlay">
+  <img src="img/fondo.jpg" class="fondo"></div>
+
+  <header>
+    <div class="logotipo">
+      <a href="People Find Consulting.html">
+        <img src="img/LOGO - People Find Consulting.png" alt="logo">
+      </a>  
+    </div>
+
+    <nav class="menu-reg">
+      <ul class="menu">
+        <li><a href="People Find Consulting.html">Sobre nosotros</a></li>
+        <li><a href="perfil.html">Servicios</a></li>
+        <li><a href="servicios.html">Novedades</a></li>
+      </ul>
+
+      <button class="contactanos">Contactanos</button>
+    </nav>
+  </header>
+
+  <section class="contact-form-section">
+    <h2>Contáctanos</h2>
+    <form id="contactForm" action="#" method="POST">
+      <div class="form-group">
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" placeholder="Escribe tu mensaje (mínimo 20 caracteres)" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-button">Enviar</button>
+
+      <div id="confirmation-message" class="confirmation-message" style="display: none;">
+        <p>¡Gracias! Tu mensaje ha sido enviado correctamente.</p>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <section class="pie">
+      <nav>
+        <div class="col1">
+          <a href="People Find Consulting.html">
+            <img src="img/LOGO - People Find Consulting.png" alt="logo"  width="200" height="240">
+          </a>
+        </div>
+
+        <div class="col2">
+          <ul>
+            <li><a href="People Find Consulting.html">Inicio</a></li>
+            
+            <li><a href="Busquedas.html">Búsquedas y selección</a></li>
+            
+            <li><a href="Capacitacion.html">Capacitacion y desarrollo</a></li>
+            
+            <li><a href="Gestion.html">Gestión de RRHH</a></li>
+          </ul>
+        </div>
+
+        <div class="col3">
+
+          <a href="www.instagram.com">
+            <img src="img/instagram.png" alt="logo" width="80" height="80">
+          </a>
+
+          <a href="www.linkedin.com">
+            <img src="img/linkedin.png" alt="logo" width="80" height="80">
+          </a>
+
+        </div>
+
+      </nav>
+    </section>
+  </footer>
+
+</body>
+
+</html>
